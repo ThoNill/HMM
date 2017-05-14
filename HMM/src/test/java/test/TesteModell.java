@@ -19,10 +19,8 @@ import thomas.nill.hmm.modell.Viterbi;
 public class TesteModell {
 
     public TesteModell() {
-        // TODO Auto-generated constructor stub
     }
 
-   @Ignore
     @Test
     public void testen() {
 
@@ -42,14 +40,14 @@ public class TesteModell {
         assertEquals(0.8, hmm.get‹bergang(0, 0), 0.01);
         assertEquals(0.8, hmm.get‹bergang(1, 1), 0.01);
 
-        hmm.setEmissionsH‰ufigkeit(0,0,  0.20);
-        hmm.setEmissionsH‰ufigkeit(0,1,  0.20);
-        hmm.setEmissionsH‰ufigkeit(0,2,  0.30);
-        hmm.setEmissionsH‰ufigkeit(0,3,  0.30);
-        hmm.setEmissionsH‰ufigkeit(1,0,  0.4);
-        hmm.setEmissionsH‰ufigkeit(1,1,  0.4);
-        hmm.setEmissionsH‰ufigkeit(1,2,  0.1);
-        hmm.setEmissionsH‰ufigkeit(1,3,  0.1);
+        hmm.setEmissionsH‰ufigkeit(0, 0, 0.20);
+        hmm.setEmissionsH‰ufigkeit(0, 1, 0.20);
+        hmm.setEmissionsH‰ufigkeit(0, 2, 0.30);
+        hmm.setEmissionsH‰ufigkeit(0, 3, 0.30);
+        hmm.setEmissionsH‰ufigkeit(1, 0, 0.4);
+        hmm.setEmissionsH‰ufigkeit(1, 1, 0.4);
+        hmm.setEmissionsH‰ufigkeit(1, 2, 0.1);
+        hmm.setEmissionsH‰ufigkeit(1, 3, 0.1);
 
         FolgeErzeugen erz = new FolgeErzeugen(hmm);
         try {
@@ -77,9 +75,8 @@ public class TesteModell {
         }
     }
 
-    @Ignore
     @Test
- public void viterbi() {
+    public void viterbi() {
 
         HMM hmm = new MatrixHMM(new String[] { "GEN", "REP" }, new String[] {
                 "A", "C", "G", "T" });
@@ -92,15 +89,15 @@ public class TesteModell {
         hmm.set‹bergang(0, 1, 0.6);
         hmm.set‹bergang(1, 1, 0.4);
 
-        hmm.setEmissionsH‰ufigkeit(0,0, 0.45);
-        hmm.setEmissionsH‰ufigkeit(0,1, 0.45);
-        hmm.setEmissionsH‰ufigkeit(0,2, 0.05);
-        hmm.setEmissionsH‰ufigkeit(0,3, 0.05);
+        hmm.setEmissionsH‰ufigkeit(0, 0, 0.45);
+        hmm.setEmissionsH‰ufigkeit(0, 1, 0.45);
+        hmm.setEmissionsH‰ufigkeit(0, 2, 0.05);
+        hmm.setEmissionsH‰ufigkeit(0, 3, 0.05);
 
-        hmm.setEmissionsH‰ufigkeit(1,0, 0.05);
-        hmm.setEmissionsH‰ufigkeit(1,1, 0.05);
-        hmm.setEmissionsH‰ufigkeit(1,2, 0.45);
-        hmm.setEmissionsH‰ufigkeit(1,3, 0.45);
+        hmm.setEmissionsH‰ufigkeit(1, 0, 0.05);
+        hmm.setEmissionsH‰ufigkeit(1, 1, 0.05);
+        hmm.setEmissionsH‰ufigkeit(1, 2, 0.45);
+        hmm.setEmissionsH‰ufigkeit(1, 3, 0.45);
 
         FolgeErzeugen erz = new FolgeErzeugen(hmm);
 
@@ -134,10 +131,10 @@ public class TesteModell {
         hmm.set‹bergang(1, 1, 0.8);
 
         for (int i = 0; i < 6; i++) {
-            hmm.setEmissionsH‰ufigkeit(0,i, 1.0 / 6.0);
-            hmm.setEmissionsH‰ufigkeit(1,i, 0.1);
+            hmm.setEmissionsH‰ufigkeit(0, i, 1.0 / 6.0);
+            hmm.setEmissionsH‰ufigkeit(1, i, 0.1);
         }
-        hmm.setEmissionsH‰ufigkeit(1,5, 0.5);
+        hmm.setEmissionsH‰ufigkeit(1, 5, 0.5);
 
         Viterbi analyse = new Viterbi(hmm);
 
@@ -165,8 +162,8 @@ public class TesteModell {
         hmm.set‹bergang(1, 1, 0.8);
 
         for (int i = 0; i < 6; i++) {
-            hmm.setEmissionsH‰ufigkeit(0,i, 1.0 / 6.0);
-            hmm.setEmissionsH‰ufigkeit(1,i, 0.1);
+            hmm.setEmissionsH‰ufigkeit(0, i, 1.0 / 6.0);
+            hmm.setEmissionsH‰ufigkeit(1, i, 0.1);
         }
         hmm.setEmissionsH‰ufigkeit(1, 5, 0.5);
 
@@ -182,10 +179,10 @@ public class TesteModell {
         hmmTrain.set‹bergang(1, 1, 0.4);
 
         for (int i = 0; i < 6; i++) {
-            hmmTrain.setEmissionsH‰ufigkeit(0,i, 1.0 / 6.0);
-            hmmTrain.setEmissionsH‰ufigkeit(1,i, 0.1);
+            hmmTrain.setEmissionsH‰ufigkeit(0, i, 1.0 / 6.0);
+            hmmTrain.setEmissionsH‰ufigkeit(1, i, 0.1);
         }
-        hmmTrain.setEmissionsH‰ufigkeit(1,5, 0.5);
+        hmmTrain.setEmissionsH‰ufigkeit(1, 5, 0.5);
 
         FolgeErzeugen erz = new FolgeErzeugen(hmm);
         pr¸fen(hmm);
@@ -193,7 +190,7 @@ public class TesteModell {
 
         BaumWelch trainer = new BaumWelch(hmmTrain);
 
-        for (int i = 0; i < 1;i++) {
+        for (int i = 0; i < 1; i++) {
             HMMSequenceItem[] werte = erz.generate(1000);
             int[] emissionen = HMMSequenceItem.toEmissionen(werte);
             trainer.updateHmm(emissionen);
