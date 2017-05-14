@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DIALOG page="login" title="TLogin">
+
+	<STRING name="name" />
+	<STRING name="erzeugteSequenz" ref="hmm.erzeugteSequenz"/>
+
+
+	<BEAN name="hmm" class="thomas.nill.hmm.HMMBean">
+	</BEAN>
+
+	<TABLE name="tabelle" ref="hmm.uebergaenge">
+		<COLUMN name="Z0" />
+		<COLUMN name="Z1" />
+	</TABLE>
+
+	<GUI>
+
+		<VBOX>
+			<TEXTFIELD name="tabelle.currentRow" />
+			<TEXTFIELD name="tabelle.currentColumn" />
+			<TEXTFIELD name="erzeugteSequenz" />
+		<TEXTFIELD name="tabelle.cellValue" />
+		
+			<LABEL text="Test" />
+			
+			<HBOX>
+				<SHOWTABLE name="tabelle">
+					<COLUMN name="Z0" header="Wert" />
+					<COLUMN name="Z1" header="Text" />
+				</SHOWTABLE>
+					
+			</HBOX>
+		</VBOX>
+
+	</GUI>
+</DIALOG>
