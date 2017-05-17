@@ -3,7 +3,7 @@ JanusAngular2
 
 Hidden Markov Modelle
 
-Implementierungen der Vitarbi und Baum-Welch Algorithmen.
+Implementierungen der Viterbi und Baum-Welch Algorithmen.
 
 Anregungen dafür von:
 
