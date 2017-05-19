@@ -58,10 +58,10 @@ public class HMMBean implements Serializable {
         hmm.set‹bergang(1, 1, 0.8);
 
         for (int i = 0; i < 6; i++) {
-            hmm.setEmissionsH‰ufigkeit(i, 0, 1.0 / 6.0);
-            hmm.setEmissionsH‰ufigkeit(i, 1, 0.1);
+            hmm.setEmissionsH‰ufigkeit(0,i, 1.0 / 6.0);
+            hmm.setEmissionsH‰ufigkeit(1,i, 0.1);
         }
-        hmm.setEmissionsH‰ufigkeit(5, 1, 0.5);
+        hmm.setEmissionsH‰ufigkeit(1, 5, 0.5);
         tm = new DefaultExtendedTableModel(zustandsNamen, zustandsNamen.length);
         for (int row = 0; row < zustandsNamen.length; row++) {
             for (int col = 0; col < zustandsNamen.length; col++) {
